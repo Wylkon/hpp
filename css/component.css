@@ -177,13 +177,15 @@ button.slider-switch:hover {
 	position: absolute;
 	display: block;
 	height: calc(100% + 0.2px);
-	opacity: 0.5;
+	opacity: 0.3;
+	object-fit: cover;
 }
 
 @media screen and (min-aspect-ratio: 1280/850) {
     .img-dragger .img-wrap  img {
         width: calc(100% + 0.2px);
-        height: auto;
+        height: 100%;
+		object-fit: cover;
     }
 }
 
@@ -325,6 +327,7 @@ button.content-switch::before {
 	text-align: center;
 	color: #545b61;
 	font-size: 1.5em;
+	padding-bottom: 120px;
 }
 
 .js .pages .content {
@@ -339,6 +342,7 @@ button.content-switch::before {
 }
 
 .pages .content.show {
+	min-height: 100%;
 	height: auto;
 	-webkit-transition: none;
 	transition: none;
@@ -348,8 +352,9 @@ button.content-switch::before {
 	font-size: 5em;
 	max-width: 70%;
 	color: #34495e;
-	padding: 2.25em 10px 1em;
+	padding: 1.25em 10px 1em;
 }
+
 
 .no-js .pages .content h2 {
 	padding-top: 1em;
@@ -362,16 +367,26 @@ button.content-switch::before {
 .pages .content p {
 	max-width: 1100px;
 	margin: 0 auto;
-	padding: 0.5em 2em;
+	padding: 0.5em 1em;
 	line-height: 1.5;
 	text-align: left;
 	font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
+	background: white;
+	margin-bottom: 20px;
+	font-size: 1.4em;
 }
 
-.pages .content p:last-child {
-	padding: 5em 1em 8em;
-	text-align: center;
+.pages .content p.cite {
+	background: rgba(184, 225, 223, 0.5);
 	font-weight: bold;
+}
+.pages .content .center {
+	text-align: center;
+}
+
+.pages .content .img-center img {
+	margin: 0 auto 20px;
+	display: block;
 }
 
 .js .pages .content h2,
